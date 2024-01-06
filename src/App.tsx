@@ -1,21 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import AddTodo from './Components/AddTodo/AddTodo';
-import TodoList from './Components/TodoList/TodoList';
-
+import "./App.css";
+import AddTodo from "./Components/AddTodo/AddTodo";
+import TodoList from "./Components/TodoList/TodoList";
+import { ColumnsProvider } from "./hooks/useTodoColumns";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
-      <h3 > Welcome NEXT EGY !!</h3>
+      <ToastContainer />
+      <ColumnsProvider>
+        <AddTodo />
+        <TodoList />
+      </ColumnsProvider>
 
-      <AddTodo />
-
-      <TodoList />
-
-      <div>
-
-      </div>
+      <div></div>
     </div>
   );
 }
